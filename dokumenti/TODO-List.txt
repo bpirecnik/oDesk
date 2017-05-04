@@ -1,1 +1,27 @@
-Testing the upload
+Izmenjavanje sporocil
+	=> A-->B interno (dodajanje priponk)
+	=> Sporocanje pregledno
+	=> Ob prijavi uporabnika se mu prikaže število cakajocih sporocil
+
+Dodajanje projektov
+	=> Narocnik razpiše projekt z okvirno ceno, deadline, opis projekta, programski jezik
+	=> na oglasu se izpišejo narocnikove informacije
+
+Sprejemanje projektov
+	=> Dogovarjanje o ponudbi ter prijavljanje na projekt (potrditi mora delojemalec in narocnik)
+	=> Potrjevanje delojemalca in delno zaprtje projekta (developing stage)
+
+Zakljucevanje projektov
+	=> Ocena delojemalca/dela (na njegovem profilu)
+	=> Projekt se zapre (ni vec možno oddajati ponudb)
+	=> Delojemalec lahko da oceno narocniku (*)
+
+Profil uporabnika
+	=> Vidni projekti
+	=> Vidna ocena
+	=> Dodajanje oseb
+
+_____________________
+- admin lahko dodaja podrocja, za katere ima uporabnike (programer, dizajner ...)
+- uporabnik lahko v profilu izbere, katera podrocja ga zanimajo (programiranje, dizajn ...)
+- V profilu uporabnika vidite njegovo povprecno oceno in število narejenih nalog
