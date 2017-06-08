@@ -1,4 +1,4 @@
-Izmenjavanje sporocil
+﻿Izmenjavanje sporocil
 	=> A-->B interno (dodajanje priponk)
 	=> Sporocanje pregledno
 	=> Ob prijavi uporabnika se mu prikaže število cakajocih sporocil
@@ -19,7 +19,6 @@ Zakljucevanje projektov
 Profil uporabnika
 	=> Vidni projekti
 	=> Vidna ocena
-	=> Dodajanje oseb
 
 _____________________
 - admin lahko dodaja podrocja, za katere ima uporabnike (programer, dizajner ...)
