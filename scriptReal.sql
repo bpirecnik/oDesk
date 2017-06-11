@@ -102,16 +102,23 @@ Create table ratings_users (
  Primary Key (id)) ENGINE = InnoDB;
 
 Create table projects_users (
-	id Int NOT NULL,
+	id Int NOT NULL AUTO_INCREMENT,
+	role_id Int NOT NULL,
 	user_id Int NOT NULL,
 	project_id Int NOT NULL,
  Primary Key (id)) ENGINE = InnoDB;
 
 Create table comments (
-	id Int NOT NULL,
+	id Int NOT NULL AUTO_INCREMENT,
 	project_id Int NOT NULL,
 	user_id Int NOT NULL,
 	description Text NOT NULL,
+ Primary Key (id)) ENGINE = InnoDB;
+
+Create table roles (
+	id Int NOT NULL AUTO_INCREMENT,
+	title Varchar(30) NOT NULL,
+	description Varchar(40) NOT NULL,
  Primary Key (id)) ENGINE = InnoDB;
 
 
@@ -130,5 +137,6 @@ Alter table comments add Foreign Key (project_id) references projects (id) on de
 Alter table attachments_messages add Foreign Key (message_id) references messages (id) on delete  restrict on update  restrict;
 Alter table attachments_messages add Foreign Key (attachment_id) references attachments (id) on delete  restrict on update  restrict;
 Alter table ratings_users add Foreign Key (rating1_id) references ratings (id) on delete  restrict on update  restrict;
+Alter table projects_users add Foreign Key (role_id) references roles (id) on delete  restrict on update  restrict;
 
 
