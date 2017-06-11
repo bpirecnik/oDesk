@@ -14,7 +14,7 @@
 
 <table>
     <tr>
-        <td colspan="2"><span>Projekti</span><br>
+        <td colspan="2">
             <table id="project_table">
             <tr>
                 <td>
