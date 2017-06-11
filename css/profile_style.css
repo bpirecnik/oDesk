@@ -1,0 +1,42 @@
+html, body, div, form, fieldset, legend, label{
+    margin: 0;
+    padding: 0;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th, td{
+    text-align: left;
+    vertical-align: top;
+}
+img {
+    border: 0; 
+}
+
+
+table {
+    height: 100%;
+}
+
+#profile{
+    width: 20%;
+    height: 100%;
+}
+#avatar_image {
+    text-align: center;
+    margin-bottom: 13px;
+}
+#profile_info {
+    text-align: center;
+}
+#name {
+    font-size: 18pt;
+    font-weight: 700;
+}
+#desc {
+    padding-left: 10px;
+    padding-right: 10px;
+    word-wrap: break-word;
+    font-size: 12pt;
+}
