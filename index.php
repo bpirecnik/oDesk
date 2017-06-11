@@ -9,7 +9,6 @@
     else {
         echo 'Nisi prijavljen!';
     }
-   
 ?>
 
 <h1>Obrazec</h1>
