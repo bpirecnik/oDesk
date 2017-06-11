@@ -81,7 +81,7 @@ include_once 'session.php';
                     </ul>    	
                 </div> <!-- end of tooplate_menu -->
 
-                <div id="site_title"><h1><a href="#">Free Website Template</a></h1></div>
+                <!--<div id="site_title"><h1><a href="#">Free Website Template</a></h1></div>-->
 
             </div> <!-- end of header -->
 

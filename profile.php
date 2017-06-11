@@ -12,18 +12,60 @@
 
 <link href="css/profile_style.css" rel="stylesheet" type="text/css" />
 
-<table border="black solid 1px">
+<table>
     <tr>
-        <td colspan="2">
-            <span>Projekti</span><br>
-            <?php
-                $hash = hash('md5', $user['first_name']." ".$user['last_name']);
-                $query = sprintf("SELECT * FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id WHERE (pu.user_id = (SELECT id FROM users u WHERE u.hashcode LIKE '%s'))", $hash);
-                $result = mysqli_query($link, $query);
-                while ($row = mysqli_fetch_array($result)) {
-                        echo $row['title'];
-                }
-            ?>
+        <td colspan="2"><span>Projekti</span><br>
+            <table id="project_table">
+            <tr>
+                <td>
+                    <span id="title">
+                        <?php
+                            $hash = hash('md5', $user['first_name']." ".$user['last_name']);
+                            $query = sprintf("SELECT * FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id WHERE (pu.user_id = (SELECT id FROM users u WHERE u.hashcode LIKE '%s'))", $hash);
+                            $result = mysqli_query($link, $query);
+                            while ($row = mysqli_fetch_array($result)) {
+                                    echo $row['title'];
+                            }
+                        ?>
+                    </span>
+                    <br>
+                    <span id="price">
+                        1200 €
+                    </span>
+                </td>
+                <td class="right">
+                    <span id="start">
+                        Started: 06-11-2017
+                        <br>
+                        Ended: 01-17-2018
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <br>
+                    <span id="end">
+                        Worked as: C++ programmer
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <br>
+                    <span id="desc">
+                        Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="right">
+                    <br>
+                    <span id="creator">
+                        Employer: Jon Snow
+                    </span>
+                </td>
+            </tr>
+        </table>
         </td>
 
         <td rowspan="2" id="profile">
@@ -51,7 +93,7 @@
                 </span>
             </div>
 
-            <div id="desc"> 
+            <div id="desc_profile"> 
                 <br>
                 <span><?php echo $user['description'];?></span>
             </div>

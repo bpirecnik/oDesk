@@ -16,11 +16,11 @@ body {
 }
 
 #home { 
-	background-image: url(../images/tooplate_body_hp.png); 
+	/*background-image: url(../images/tooplate_body_hp.png);*/
 }
 
 #subpage { 
-	background-image: url(../images/tooplate_body_sp.png); 
+	/*background-image: url(../images/tooplate_body_sp.png); */
 }
 
 a, a:link, a:visited { 
@@ -136,13 +136,16 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 #tooplate_header {
 	width: 980px;
 	height: 815px;
-	background: url(../images/tooplate_header.png) no-repeat top center;
+	/*background: url(../images/tooplate_header.png) no-repeat top center;*/
 }
 
 #tooplate_header_sp {
 	width: 980px;
-	height: 174px;
-	margin-bottom: 40px;
+	/*
+        height: 174px;
+        */
+	height: 70px;
+	margin-bottom: -10px;
 	background: url(../images/tooplate_header.png) no-repeat top center;
 }
 

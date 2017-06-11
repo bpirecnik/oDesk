@@ -17,10 +17,11 @@ img {
 
 table {
     height: 100%;
+    border: black solid 1px;
 }
 
 #profile{
-    width: 20%;
+    width: 30%;
     height: 100%;
 }
 #avatar_image {
@@ -30,13 +31,37 @@ table {
 #profile_info {
     text-align: center;
 }
+
 #name {
     font-size: 18pt;
     font-weight: 700;
 }
-#desc {
+#desc_profile {
     padding-left: 10px;
     padding-right: 10px;
     word-wrap: break-word;
     font-size: 12pt;
+}
+
+#title {
+    font-size: 18pt;
+    font-weight: 700;
+}
+
+#price {
+    font-size: 12pt;
+    font-style: oblique;
+}
+
+#start{
+    font-style: oblique;
+}
+
+.right {
+    text-align: right;
+}
+
+#project_table {
+    width: 80%;
+    margin: 30px 30px 30px 30px;
 }
