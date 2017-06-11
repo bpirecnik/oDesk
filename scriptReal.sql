@@ -67,7 +67,7 @@ Create table messages (
 	id Int NOT NULL AUTO_INCREMENT,
 	userfrom_id Int NOT NULL,
 	userto_id Int NOT NULL,
-	read Int NOT NULL,
+	seen Int NOT NULL,
 	content Text NOT NULL,
 	title Varchar(200) NOT NULL,
 	date Timestamp NOT NULL,
