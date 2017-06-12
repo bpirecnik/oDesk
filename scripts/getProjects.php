@@ -4,7 +4,7 @@
             
             $user_id = $_SESSION['user_id'];
             
-            $sql = "SELECT * FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u on u.id=pu.user_id WHERE (pu.user_id = $user_id)";
+            $sql = "SELECT p.title, p.price, p.start_date, p.end_date, p.description  FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u on u.id=pu.user_id WHERE (pu.user_id = $user_id)";
             
             $cnt = 0;
             $class;
@@ -15,13 +15,13 @@
 			$class = "row"."$cnt";
 			
 			$name= $row['title'];
-			$description = $row['description'];
+			$desc = $row['description'];
 			$datestart = $row['start_date'];
-			$dateend = $row['start_date'];
-			$price = $row['start_date'];
+			$dateend = $row['end_date'];
+			$price = $row['price'];
 			
 			echo "<tr id='$class'>";
-			echo "<td class='cell1'>$name</td>", "<td class='cell2'>$description</td>", "<td class='cell3'>$datestart</td>", "<td class='cell4'>$dateend</td>", "<td class='cell5'>$price</td>";
+			echo "<td class='cell1'>$name</td>", "<td class='cell2'>$desc</td>", "<td class='cell3'>$datestart</td>", "<td class='cell4'>$dateend</td>", "<td class='cell5'>$price</td>";
 			echo "</tr>";
 		}
         }

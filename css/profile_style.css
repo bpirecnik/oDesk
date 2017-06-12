@@ -16,6 +16,7 @@ img {
 
 table {
     height: 100%;
+    width: 100%;
     border: black solid 1px;
 }
 
@@ -59,7 +60,9 @@ table {
 #start{
     font-style: oblique;
 }
-
+#end {
+    font-style: oblique;
+}
 .right {
     text-align: right;
 }

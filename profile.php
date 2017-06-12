@@ -23,40 +23,31 @@
             <tr>
                 <td>
                     <br><br>
-                    <span id="title">
-                        <?php
-                            $hash = hash('md5', $user['first_name']." ".$user['last_name']);
-                            $query = sprintf("SELECT * FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id WHERE (pu.user_id = (SELECT id FROM users u WHERE u.hashcode LIKE '%s'))", $hash);
-                            $result = mysqli_query($link, $query);
-                            while ($row = mysqli_fetch_array($result)) {
-                                    echo $row['title'];
-                            }
-                        ?>
-                    </span>
+                    <span id="title"></span>
                     <br>
-                    <span id="price">
-                        1200 €
-                    </span>
+                    <span id="price"></span>
                 </td>
                 <td class="right">
                 <div id="navigation">
                         <button type="button"onClick="previousTask('arrowLeftUser')"> &#8678;</button>
-                        <span id="currTaskU" onMouseUp="isClicked('user')">0</span>
-                        <span id="cTaskU">/0</span>
+                        <span id="currProject" onMouseUp="isClicked('user')">0</span>
+                        <span id="cProject">/0</span>
                         <button type="button" onClick="nextTask('arrowRightUser')"> &#8680;</button>
                     </div>
                     <br><br>
                     <span id="start">
-                        Started: 06-11-2017
-                        <br>
-                        Ended: 01-17-2018
+                        Started:
+                    </span>
+                    <br>
+                    <span id="end">
+                        Ended:
                     </span>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
                     <br>
-                    <span id="end">
+                    <span id="">
                         Worked as: C++ programmer
                     </span>
                 </td>
@@ -64,9 +55,7 @@
             <tr>
                 <td colspan="2">
                     <br>
-                    <span id="desc">
-                        Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.Creating web page with already established layout.
-                    </span>
+                    <span id="desc"></span>
                 </td>
             </tr>
             <tr>
@@ -167,4 +156,9 @@
 <?php
 include_once 'footer.php';
 ?>
+
 <script language="JavaScript" type="text/javascript"  src="js/showProjects.js"></script>
+
+<script>
+    window.onload = firstShow(); //notice no parenthesis
+</script>
