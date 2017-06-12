@@ -12,6 +12,10 @@
 
 <link href="css/profile_style.css" rel="stylesheet" type="text/css" />
 
+<table id="tableProjects">
+    <?php require('scripts/getProjects.php'); ?>
+</table>
+
 <table>
     <tr>
         <td colspan="2">
