@@ -12,7 +12,7 @@
 
 <link href="css/profile_style.css" rel="stylesheet" type="text/css" />
 
-<table id="tableProjects">
+<table id="tableProjects" style="display: none;">
     <?php require('scripts/getProjects.php'); ?>
 </table>
 
