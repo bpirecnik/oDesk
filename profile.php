@@ -22,6 +22,7 @@
             <table id="project_table">
             <tr>
                 <td>
+                    <br><br>
                     <span id="title">
                         <?php
                             $hash = hash('md5', $user['first_name']." ".$user['last_name']);
@@ -38,6 +39,13 @@
                     </span>
                 </td>
                 <td class="right">
+                <div id="navigation">
+                        <button type="button"onClick="previousTask('arrowLeftUser')"> &#8678;</button>
+                        <span id="currTaskU" onMouseUp="isClicked('user')">0</span>
+                        <span id="cTaskU">/0</span>
+                        <button type="button" onClick="nextTask('arrowRightUser')"> &#8680;</button>
+                    </div>
+                    <br><br>
                     <span id="start">
                         Started: 06-11-2017
                         <br>
@@ -83,9 +91,9 @@
                     }
                 ?>
             </div>
-
             <div id="profile_info">
                 <span id="name"><?php echo $user['first_name']; ?> <?php echo $user['last_name']; ?></span>
+                <br>
                 <span>
                     <?php 
                         $query = sprintf("SELECT title FROM countries WHERE id = %s", $user['country_id']);
@@ -103,8 +111,8 @@
             </div>
 
             <div>
-                <span id="num_projects">Projekti: 17</span>
-                <span id="avg_score">Povrečna ocena: 4.2</span>
+                <span id="num_projects">Projekti: 17</span><br>
+                <span id="avg_score">Povrečna ocena: 4.2</span><br>
                 <span id="num_coments">Število komentarjev: 16</span>
             </div>
         </td>
@@ -159,3 +167,4 @@
 <?php
 include_once 'footer.php';
 ?>
+<script language="JavaScript" type="text/javascript"  src="js/showProjects.js"></script>

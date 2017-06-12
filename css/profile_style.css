@@ -68,3 +68,22 @@ table {
     width: 80%;
     margin: 30px 30px 30px 30px;
 }
+
+#navigation {
+    display: inline;
+    float: right;
+    font-size: 19px;
+}
+
+#navigation button {
+    background-color: whitesmoke;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 21px;
+    cursor: pointer;
+    outline-color: white;
+}
+
