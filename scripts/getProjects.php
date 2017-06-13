@@ -12,7 +12,6 @@
             $result = mysqli_query($link, $sql);
             while ($row = mysqli_fetch_array($result)){
 			$cnt++;
-                        
 			$class = "row"."$cnt";
 			
 			$name= $row['title'];
