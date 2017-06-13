@@ -18,6 +18,7 @@
 			$desc = $row['description'];
 			$datestart = $row['start_date'];
 			$dateend = $row['end_date'];
+			$price = $row['price'];
 			
 			echo "<tr id='$class'>";
 			echo "<td class='cell1'>$name</td>", "<td class='cell2'>$desc</td>", "<td class='cell3'>$datestart</td>", "<td class='cell4'>$dateend</td>", "<td class='cell5'>$price</td>";
