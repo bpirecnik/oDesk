@@ -23,7 +23,7 @@
             <tr>
                 <td>
                     <br><br>
-                    <span id="title"></span>
+                    <span id="title">No projects to show!</span>
                     <br>
                     <span id="price"></span>
                 </td>
