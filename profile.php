@@ -16,57 +16,59 @@
     <?php require('scripts/getProjects.php'); ?>
 </table>
 
+    
+    
 <table>
     <tr>
         <td colspan="2">
-            <table id="project_table">
-            <tr>
-                <td>
-                    <br><br>
-                    <span id="title">No projects to show!</span>
-                    <br>
-                    <span id="price"></span>
-                </td>
-                <td class="right">
-                <div id="navigation">
-                        <button type="button"onClick="previousTask('arrowLeftUser')"> &#8678;</button>
-                        <span id="currProject">0</span>
-                        <span id="cProject">/0</span>
-                        <button type="button" onClick="nextTask('arrowRightUser')"> &#8680;</button>
-                    </div>
-                    <br><br>
-                    <span id="start">
-                        Started:
-                    </span>
-                    <br>
-                    <span id="end">
-                        Ended:
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <br>
-                    <span id="">
-                        Worked as: C++ programmer
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <br>
-                    <span id="desc"></span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="right">
-                    <br>
-                    <span id="creator">
-                        Employer: Jon Snow
-                    </span>
-                </td>
-            </tr>
-        </table>
+            <table id="project_table" tabindex="0">
+                <tr>
+                    <td>
+                        <br><br>
+                        <span id="title">No projects to show!</span>
+                        <br>
+                        <span id="price"></span>
+                    </td>
+                    <td class="right">
+                    <div id="navigation">
+                            <button type="button"onClick="previousTask('arrowLeftUser')"> &#8678;</button>
+                            <span id="currProject">0</span>
+                            <span id="cProject">/0</span>
+                            <button type="button" onClick="nextTask('arrowRightUser')"> &#8680;</button>
+                        </div>
+                        <br><br>
+                        <span id="start">
+
+                        </span>
+                        <br>
+                        <span id="end">
+
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <br>
+                        <span id="skill">
+
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <br>
+                        <span id="desc"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="right">
+                        <br>
+                        <span id="empl">
+
+                        </span>
+                    </td>
+                </tr>
+            </table>
         </td>
 
         <td rowspan="2" id="profile">
@@ -100,7 +102,14 @@
             </div>
 
             <div>
-                <span id="num_projects">Projekti: 17</span><br>
+                <?php 
+                    $sql = "SELECT COUNT(p.id) AS st_projektov FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id WHERE (pu.user_id = $user_id)";
+                    $result = mysqli_query($link, $sql);
+                    while ($row = mysqli_fetch_array($result)) {
+                            echo '<span id="num_projects">Število projektov: '.$row['st_projektov'].'</span>';
+                    }
+                ?>
+                <br>
                 <span id="avg_score">Povrečna ocena: 4.2</span><br>
                 <span id="num_coments">Število komentarjev: 16</span>
             </div>
