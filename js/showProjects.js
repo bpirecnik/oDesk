@@ -6,6 +6,7 @@ var proDEnd;
 var proPrice;
 var count;
 var numOfRows;
+var edit = dociment.getElementById('currProject');
 
 //Showing the first task and setting everything up
 function firstShow() {
@@ -47,13 +48,12 @@ function nextTask(sender) {
 			count++;
 			search = 'row' + count;
 			row = document.getElementById(search);
-			changeTask("user");
 		}else{
 			count = 1;
 			search = 'row' + count;
 			row = document.getElementById(search);
-			changeTask("user");
 		}
+                changeProject();
 	}
 }
 function previousTask(sender) {
@@ -74,18 +74,20 @@ function previousTask(sender) {
 }
 //______________________________________________________________________
 
-function changeTask(field) {
-	if(field=="user"){			
-		taskName = row.getElementsByClassName('cell1')[0].innerHTML;
-		taskDesc = row.getElementsByClassName('cell2')[0].innerHTML;
-		taskDate = row.getElementsByClassName('cell3')[0].innerHTML;
-		
-		edit.innerHTML = countU;
-		document.getElementById('cTaskU').innerHTML = "/" + numOfRows;
-		document.getElementById('nameOfTaskU').innerHTML = taskName;
-		document.getElementById('descriptionOfTaskU').innerHTML = taskDesc;
-		document.getElementById('dateOfTaskU').innerHTML = taskDate;
-	}
+function changeProject() {
+    proName = row.getElementsByClassName('cell1')[0].innerHTML;
+    proDesc = row.getElementsByClassName('cell2')[0].innerHTML;
+    proDStart = row.getElementsByClassName('cell3')[0].innerHTML;
+    proDEnd = row.getElementsByClassName('cell4')[0].innerHTML;
+    proPrice = row.getElementsByClassName('cell5')[0].innerHTML;
+    
+    edit.innerHTML = count;
+
+    document.getElementById('title').innerHTML = proName;
+    document.getElementById('price').innerHTML = proPrice + " €";
+    document.getElementById('start').innerHTML = "Started: " + proDStart;
+    document.getElementById('end').innerHTML = "Ended: " + proDEnd;
+    document.getElementById('desc').innerHTML = proDesc;
 }
 
 //______________________________________________________________________

@@ -30,7 +30,7 @@
                 <td class="right">
                 <div id="navigation">
                         <button type="button"onClick="previousTask('arrowLeftUser')"> &#8678;</button>
-                        <span id="currProject" onMouseUp="isClicked('user')">0</span>
+                        <span id="currProject">0</span>
                         <span id="cProject">/0</span>
                         <button type="button" onClick="nextTask('arrowRightUser')"> &#8680;</button>
                     </div>
