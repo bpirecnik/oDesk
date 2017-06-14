@@ -150,16 +150,6 @@
                 </form>
             </div>
         </td>
-
-        <td>
-            <h2>Dokumenti</h2>
-            <form action="document_insert.php" method="POST" enctype="multipart/form-data">
-                Naslov: <input type="text" name="title" /><br />
-                Opis: <textarea name="description" cols="15" rows="5"></textarea><br />
-                Datoteka: <input type="file" name="fileToUpload" /><br />
-                <input type="submit" name="submit" value="Naloži" />
-            </form>
-        </td>
     </tr>
 </table>
 <?php
