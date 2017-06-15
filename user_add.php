@@ -3,6 +3,8 @@ include_once 'header.php';
 include_once 'database.php';
 ?>
 
+<link href="css/register.css" rel="stylesheet" type="text/css"/>
+
 <form action="user_insert.php" method="POST" onsubmit="return validateForm()">
 	<table id="login_table">
 		<tr>
@@ -56,7 +58,7 @@ include_once 'database.php';
 		</tr>
 		<tr>
 			<td class="input_desc"><div id="passErr"></div></td>
-			<td class="input_table"><input type="submit" value="Registriraj" /></td>
+			<td class="login_button"><input type="submit" value="Registriraj" /></td>
 		</tr>
 	</table>
 </form>
