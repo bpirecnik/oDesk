@@ -14,12 +14,24 @@
     $country = mysqli_fetch_array($result);
 ?>
 
-<h1>Dodajanje države</h1>
+<link href="css/forms.css" rel="stylesheet" type="text/css"/>
+
+<h1 class="align_center">Dodajanje države</h1>
 <form action="country_update.php" method="POST">
     <input type="hidden" name="id" value="<?php echo $id; ?>" />
-    Ime: <input type="text" name="title" value="<?php echo $country['title']; ?>" /><br />
-    Kratica: <input type="text" name="short" value="<?php echo $country['short']; ?>"/><br />
-    <input type="submit" value="Vnesi" />
+    <table class="login_table">
+		<tr>
+			<td class="input_desc">Ime:</td>
+			<td class="input_table"><input class="input_login" type="text" name="title" value="<?php echo $country['title']; ?>" /></td>
+		</tr>
+		<tr>
+			<td class="input_desc">Kratica:</td>
+			<td class="input_table"><input class="input_login" type="text" name="short" value="<?php echo $country['short']; ?>"/></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input class="login_button" type="submit" value="Vnesi" /></td>
+		</tr>
+	</table>
 </form>
 
 

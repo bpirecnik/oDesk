@@ -9,11 +9,6 @@
         <th>Kratica</th>
         <th>Akcije</th>
     </tr>
-    <tr>
-        <td>Slovenija</td>
-        <td>SLO</td>
-        <td>Uredi Izbriši</td>
-    </tr>
     <?php
         $query = "SELECT * FROM countries";
         //pošljemo ukaz v bazo in shranimo rezultat
