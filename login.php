@@ -4,7 +4,7 @@
 
 <link href="css/forms.css" rel="stylesheet" type="text/css"/>
 
-<h1 id="center">Prijava</h1>
+<h1 id="align_center">Prijava</h1>
 
 <form action="login_check.php" method="POST">
     <table id="login_table">

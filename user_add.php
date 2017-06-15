@@ -53,7 +53,7 @@ include_once 'database.php';
 							echo '<option value="' . $row['id'] . '">' . $row['title'] . '</option>';
 						}
 					?>
-				</select><br/>
+				</select>
 			</td>
 		</tr>
 		<tr>

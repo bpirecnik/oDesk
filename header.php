@@ -64,13 +64,16 @@ include_once 'session.php';
 							
 							<?php
 							if (isset($_SESSION['user_id'])){
-								
+								?>
+							<li><a href="projects.php"><span></span>Projekti</a></li>
+							<?php
 								if(isset($_SESSION['admin']) == 1){
 									?>
-									<li><a href="countries.php"><span></span>Države</a></li> 
+									<li><a href="countries.php"><span></span>Države</a></li>
+									<li><a href="skills.php"><span></span>Veščine</a></li>
 									<?php } ?>
 									
-								<li><a href="projects.php"><span></span>Projekti</a></li>	
+									
 								<li><a href="project_add.php"><span></span>Razpis projekta</a></li>
 								<li><a href="profile.php" class="current"><span></span>Profil</a></li>
 								<li><a href="logout.php"><span></span>Odjava</a></li>
