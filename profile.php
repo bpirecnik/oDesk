@@ -145,11 +145,11 @@
                         while ($row = mysqli_fetch_array($result)) {
                             if (in_array($row['id'], $skills)) {
                                 echo '<input type="checkbox" 
-                                        name=skills[] value="'.$row['id'].'" checked="checked" />'.$row['title'];
+                                    name=skills[] value="'.$row['id'].'" checked="checked" />'.$row['title'];
                             }
                             else {
                                 echo '<input type="checkbox" 
-                                        name=skills[] value="'.$row['id'].'" />'.$row['title'];
+                                    name=skills[] value="'.$row['id'].'" />'.$row['title'];
                             }
                             echo '<br />';
                         }
