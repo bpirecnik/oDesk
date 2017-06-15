@@ -118,7 +118,16 @@
 
     <tr>
         <td>
-            <h2>Veščine</h2>
+            <div id="vescine">
+                <h2>Veščine</h2>
+                <?php 
+                        $query = "SELECT s.title FROM skills s INNER JOIN skills_users su ON s.id = su.skill_id WHERE su.user_id=$user_id AND s.id = su.skill_id";
+                        $result = mysqli_query($link, $query);
+                        while($row = mysqli_fetch_array($result)) {
+                            echo '<span>'.$row['title'].'</span>';
+                        }
+                ?>
+            </div>
             <div class="center">
                 <form action="skills_profile_update.php" method="POST">    
                     <?php 
