@@ -34,7 +34,7 @@ function firstShow() {
 		document.getElementById('start').innerHTML = "Started: " + proDStart;
 		document.getElementById('end').innerHTML = "Ended: " + proDEnd;
 		document.getElementById('desc').innerHTML = proDesc;
-		document.getElementById('skill').innerHTML = "Worked as " + proSkill;
+		document.getElementById('skill').innerHTML = "Worked with " + proSkill;
 	}
 	//-------------------------------------------------------------------------
 	
@@ -92,7 +92,7 @@ function changeProject() {
     document.getElementById('start').innerHTML = "Started: " + proDStart;
     document.getElementById('end').innerHTML = "Ended: " + proDEnd;
     document.getElementById('desc').innerHTML = proDesc;
-    document.getElementById('skill').innerHTML = "Worked as " + proSkill;
+    document.getElementById('skill').innerHTML = "Worked with " + proSkill;
 }
 
 //______________________________________________________________________
