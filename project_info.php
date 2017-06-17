@@ -7,15 +7,12 @@ include_once 'database.php';
 
 <?php
     $id = $_GET['id'];
-    if(isset($_GET['user_id'])){
-        
-    }
     $query = "SELECT * FROM projects WHERE id = $id";
     $result = mysqli_query($link, $query);
 
     //izpisal bom vse projekte
     while ($row = mysqli_fetch_array($result)) {
-        echo "<h1>".$row['title']."</h1>";
+        echo "<span>".$row['title']."</span><br>";
         echo "<span>".$row['price']." €</span><br>";
         echo "<span>".$row['start_date']."</span><br>";
         echo "<span>".$row['end_date']."</span><br>";
