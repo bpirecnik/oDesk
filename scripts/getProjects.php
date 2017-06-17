@@ -6,7 +6,7 @@
             $sql = "SELECT p.title AS projectTitle, p.price, p.start_date, p.end_date, p.description, s.title AS skillTitle
                     FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id
                     INNER JOIN users u on u.id=pu.user_id INNER JOIN skills s ON s.id=pu.skill_id
-                    WHERE (pu.user_id = $user_id)";
+                    WHERE (pu.user_id = $user_id) AND (p.stage = 3)";
             $cnt = 0;
             $class;
             
