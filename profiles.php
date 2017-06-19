@@ -2,8 +2,8 @@
     include_once 'header.php';
     include_once 'database.php';
 
-
     //shrani si id trenutno prijavljenega uporabnika
+
     $user_id = $_GET['id'];
 
     $query = "SELECT * FROM users WHERE id =$user_id";
