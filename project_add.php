@@ -28,10 +28,6 @@
 			<td class="input_table"><input type="text" class="input_login" placeholder="Vnesite okvirno ceno" name="price" required="required"/></td>
 		</tr>
 		<tr>
-			<td class="input_desc">Datum začetka:</td>
-			<td class="input_table"><input type="date" class="input_login" id="start_date" name="start_date" required="required" step="1"/></td>
-		</tr>
-		<tr>
 			<td class="input_desc">Datum konca:</td>
 			<td class="input_table"><input type="date" class="input_login" id="end_date" name="end_date" step="1"/></td>
 		</tr>
