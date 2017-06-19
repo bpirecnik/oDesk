@@ -3,10 +3,6 @@
 	=> Sporocanje pregledno
 	=> Ob prijavi uporabnika se mu prikaže število cakajocih sporocil
 
-Dodajanje projektov
-	=> Narocnik razpiše projekt z okvirno ceno, deadline, opis projekta, programski jezik
-	=> na oglasu se izpišejo narocnikove informacije
-
 Sprejemanje projektov
 	=> Dogovarjanje o ponudbi ter prijavljanje na projekt (potrditi mora delojemalec in narocnik)
 	=> Potrjevanje delojemalca in delno zaprtje projekta (developing stage)
@@ -17,9 +13,10 @@ Zakljucevanje projektov
 	=> Delojemalec lahko da oceno narocniku (*)
 
 Profil uporabnika
-	=> Vidni projekti
 	=> Vidna ocena
-
 _____________________
 - admin lahko dodaja podrocja, za katere ima uporabnike (programer, dizajner ...)
 - uporabnik lahko v profilu izbere, katera podrocja ga zanimajo (programiranje, dizajn ...)
+
+
+	=> Vidni projekti

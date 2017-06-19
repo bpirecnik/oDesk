@@ -3,26 +3,30 @@
     include_once 'session.php';
     
     $title = $_POST['title'];
-	$price = (int) $_POST['price'];    
-	$start_date = $_POST['start_date'];
+    $category = (int) $_POST['category'];    
+    $price = (int) $_POST['price'];    
+    $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
-	$description = $_POST['description'];
-//  $user_id = $_SESSION['user_id'];
+    $description = $_POST['description'];
+    $user_id = $_SESSION['user_id'];
 
 	
     
-    $query = sprintf("INSERT INTO projects(title, price, start_date, end_date, 
+    $query = sprintf("INSERT INTO projects(title, category_id, price, start_date, end_date, 
                                             description, stage)
-              VALUES('%s','%s','%s', '%s', '%s', 1)", 
+              VALUES('%s','%s','%s','%s', '%s', '%s', 1)", 
             mysqli_real_escape_string($link, $title),
+            mysqli_real_escape_string($link, $category),
             mysqli_real_escape_string($link, $price),
 			mysqli_real_escape_string($link, $start_date),
             mysqli_real_escape_string($link, $end_date),			
 			mysqli_real_escape_string($link, $description));
 
-    
     //vnos podatkov v bazo
-    mysqli_query($link, $query);    
+    mysqli_query($link, $query);
+    echo $title.$price.$start_date.$end_date.$description.$user_id;
+    $sql = "INSERT INTO projects_users(role_id, user_id, project_id) VALUES (1, $user_id, (SELECT id FROM projects WHERE (title LIKE '$title') AND (price = $price) AND (description LIKE '$description') AND (stage = 1)))";
+    mysqli_query($link, $sql);
     //preusmeritev
-    header("Location: project_add.php");
+    header("Location: projects.php");
 ?>

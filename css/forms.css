@@ -24,6 +24,11 @@
 	width: 100px;
 	text-align: center;
 }
+#option2 {
+    border: 1px solid gray;
+    margin-left: 5px;
+    width: 185px;
+}
 .login_table{
 	border: 1px solid gray;
 	margin: 10px auto;
