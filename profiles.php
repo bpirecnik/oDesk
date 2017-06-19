@@ -1,11 +1,11 @@
 <?php
     include_once 'header.php';
     include_once 'database.php';
-    
-	
+
+
     //shrani si id trenutno prijavljenega uporabnika
     $user_id = $_GET['id'];
-    
+
     $query = "SELECT * FROM users WHERE id =$user_id";
     $result = mysqli_query($link, $query);
     $user = mysqli_fetch_array($result);
@@ -17,8 +17,8 @@
     <?php require('scripts/getProjectsProfile.php'); ?>
 </table>
 
-    
-    
+
+
 <table>
     <tr>
         <td colspan="2">
@@ -87,7 +87,7 @@
                 <span id="name"><?php echo $user['first_name']; ?> <?php echo $user['last_name']; ?></span>
                 <br>
                 <span>
-                    <?php 
+                    <?php
                         $query = sprintf("SELECT title FROM countries WHERE id = %s", $user['country_id']);
                         $result = mysqli_query($link, $query);
                         while ($row = mysqli_fetch_array($result)) {
@@ -97,13 +97,13 @@
                 </span>
             </div>
 
-            <div id="desc_profile"> 
+            <div id="desc_profile">
                 <br>
                 <span><?php echo $user['description'];?></span>
             </div>
 
             <div>
-                <?php 
+                <?php
                     $sql = "SELECT COUNT(p.id) AS st_projektov FROM projects p INNER JOIN projects_users pu ON p.id = pu.project_id WHERE (pu.user_id = $user_id)";
                     $result = mysqli_query($link, $sql);
                     while ($row = mysqli_fetch_array($result)) {
@@ -111,7 +111,16 @@
                     }
                 ?>
                 <br>
-                <span id="avg_score">Povrečna ocena: 4.2</span><br>
+                <span id="avg_score">Povrečna ocena:
+									<?php
+										$sql = "SELECT AVG(r.rating) AS povprecna_ocena FROM ratings r INNER JOIN ratings_users ru ON r.id = ru.rating1_id INNER JOIN users giver ON
+										giver.id = ru.usergiver_id INNER JOIN users receiver ON receiver.id = ru.usergetr_id WHERE (ru.usergetr_id = $user_id)";
+										$result = mysqli_query($link, $sql);
+										while ($row = mysqli_fetch_array($result)){
+											echo $row['povprecna_ocena'];
+										}
+									?>
+								</span><br>
                 <span id="num_coments">Število komentarjev: 16</span>
             </div>
         </td>
@@ -121,7 +130,7 @@
         <td>
             <div id="vescine">
                 <h2>Veščine</h2>
-                <?php 
+                <?php
                         $query = "SELECT s.title FROM skills s INNER JOIN skills_users su ON s.id = su.skill_id WHERE su.user_id=$user_id AND s.id = su.skill_id";
                         $result = mysqli_query($link, $query);
                         while($row = mysqli_fetch_array($result)) {
@@ -130,8 +139,8 @@
                 ?>
             </div>
             <div class="center">
-                <form action="skills_profile_update.php" method="POST">    
-                    <?php 
+                <form action="skills_profile_update.php" method="POST">
+                    <?php
                         //zapomnim si trenute veščine, ki jih ima
                         $query = "SELECT * FROM skills_users WHERE user_id=$user_id";
                         $result = mysqli_query($link, $query);
@@ -140,16 +149,16 @@
                         while($row = mysqli_fetch_array($result)) {
                             //napolnim tabelo z veščinami, ki jih obvladam :)
                             $skills[] = $row['skill_id'];
-                        }    
+                        }
                         $query = "SELECT * FROM skills";
                         $result = mysqli_query($link, $query);
                         while ($row = mysqli_fetch_array($result)) {
                             if (in_array($row['id'], $skills)) {
-                                echo '<input type="checkbox" 
+                                echo '<input type="checkbox"
                                     name=skills[] value="'.$row['id'].'" checked="checked" />'.$row['title'];
                             }
                             else {
-                                echo '<input type="checkbox" 
+                                echo '<input type="checkbox"
                                     name=skills[] value="'.$row['id'].'" />'.$row['title'];
                             }
                             echo '<br />';
