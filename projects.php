@@ -1,14 +1,21 @@
 <?php
 include_once 'header.php';
 include_once 'database.php';
+if(isset($_SESSION['user_id'])){
+    $user = $_SESSION['user_id'];
+}
 ?>
 
 <link href="css/projects.css" rel="stylesheet" type="text/css"/>
 
 <h1>Pregled projektov</h1>
-    
+    <span><a href='projects.php?id=<?php echo $user; ?>'>Moji projekti</a></span>
     <?php 
-        $query = "SELECT p.*, u.first_name, u.last_name, u.id AS uID, c.title AS category FROM projects p INNER JOIN categories c ON c.id=p.category_id INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u ON u.id = pu.user_id WHERE p.id=pu.project_id AND pu.role_id = 1";
+        if(isset($_GET['id'])){
+            $query = "SELECT p.*, u.first_name, u.last_name, u.id AS uID, c.title AS category FROM projects p INNER JOIN categories c ON c.id=p.category_id INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u ON u.id = pu.user_id WHERE p.id=pu.project_id AND pu.role_id = 1 AND p.stage=1 AND u.id=$user";
+        }else{
+            $query = "SELECT p.*, u.first_name, u.last_name, u.id AS uID, c.title AS category FROM projects p INNER JOIN categories c ON c.id=p.category_id INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u ON u.id = pu.user_id WHERE p.id=pu.project_id AND pu.role_id = 1 AND p.stage=1";
+        }
         $result = mysqli_query($link, $query);
 		
         //izpisal bom vse projekte
@@ -28,7 +35,12 @@ include_once 'database.php';
                         echo '<td colspan=2><span id="desc">'.$row['description'].'</span></td>';
                     echo "</tr>";
                     echo '<tr>';
-                        echo '<td colspan=2><span id="button"><a href="project_info.php?id='.$row['id'].'">Prijava</a></span>';
+                        if(isset($_GET['id'])){
+                            echo '<td colspan=2><span id="button"><a href="project_info.php?id='.$row['id'].'">Poglej prijave</a></span>';
+                        }
+                        else{
+                            echo '<td colspan=2><span id="button"><a href="project_info.php?id='.$row['id'].'">Prijava</a></span>';
+                        }
                     echo '</tr>';
                 echo '</table>';
                 if(isset($_SESSION['admin']) == 1){
