@@ -1,0 +1,97 @@
+html, body, div, form, fieldset, legend, label{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    height: 100%;
+    width: 100%;
+}
+
+th, td{
+    text-align: left;
+    vertical-align: top;
+}
+
+#project {
+    width: 100%;
+    border: black 2px dotted;
+}
+
+#project_table {
+    width: 100%;
+    
+}
+
+#profile{
+    padding-top: 30px;
+    width: 30%;
+    height: 100%;
+}
+
+#avatar_image {
+    text-align: center;
+    margin-bottom: 13px;
+}
+
+#profile_info {
+    text-align: center;
+}
+
+#name {
+    font-size: 18pt;
+    font-weight: 700;
+}
+
+#desc_profile {
+    padding-left: 10px;
+    padding-right: 10px;
+    word-wrap: break-word;
+    font-size: 12pt;
+}
+
+#title {
+    font-size: 18pt;
+    font-weight: 700;
+}
+
+#price {
+    font-size: 12pt;
+    font-style: oblique;
+}
+
+#start{
+    font-style: oblique;
+}
+#end {
+    font-style: oblique;
+}
+.right {
+    text-align: right;
+}
+
+#project_table {
+    width: 80%;
+    margin: 30px 30px 30px 30px;
+}
+
+#navigation {
+    display: inline;
+    float: right;
+    font-size: 19px;
+}
+
+#navigation button {
+    background-color: whitesmoke;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 21px;
+    cursor: pointer;
+    outline-color: white;
+}
+

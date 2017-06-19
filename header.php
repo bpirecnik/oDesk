@@ -19,112 +19,48 @@ include_once 'session.php';
             <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
             
             <!--<link rel="stylesheet" href="/resources/demos/style.css" /> -->
-            <script>
-                function validateForm() {
-                    var pass = document.getElementsByName("pass")[0].value;
-                    var pass2 = document.getElementsByName("pass2")[0].value;
-                    if ((pass == pass2) && (pass != '')) {
-                        return true;
-                    }
-                    else {
-                        document.getElementById("passErr").innerHTML = "Neujemanje";    
-                        return false;
-                    }
-                }
-            </script>
-            <script>
-                $(function() {
-                    $( "#startdate" ).datepicker({
-                        showOn: "button",
-                        buttonImage: "images/calendar.gif",
-                        buttonImageOnly: true,
-                        buttonText: "Select date",
-                        dateFormat: "yy-mm-dd"
-                    });
-                });
-                $(function() {
-                    $( "#enddate" ).datepicker({
-                        showOn: "button",
-                        buttonImage: "images/calendar.gif",
-                        buttonImageOnly: true,
-                        buttonText: "Select date",
-                        dateFormat: "yy-mm-dd"
-                    });
-                });
-            </script>
 
     </head>
     <body id="subpage">
         <div id="content">
-			<div id="tooplate_wrapper">
-				<div id="tooplate_header_sp">
-					<div id="tooplate_menu">
-						<ul>
-							
-							
-							<?php
-							if (isset($_SESSION['user_id'])){
-								?>
-							<li><a href="projects.php"><span></span>Projekti</a></li>
-							<?php
-								if(isset($_SESSION['admin']) == 1){
-									?>
-									<li><a href="countries.php"><span></span>Države</a></li>
-									<li><a href="skills.php"><span></span>Veščine</a></li>
-									<?php } ?>
-									
-									
-								<li><a href="project_add.php"><span></span>Razpis projekta</a></li>
-								<li><a href="profile.php" class="current"><span></span>Profil</a></li>
-								<li><a href="logout.php"><span></span>Odjava</a></li>
-								
-							<?php } else { ?>	
-		
-								<li><a href="user_add.php"><span></span>Registracija</a></li>
-								<li><a href="login.php"><span></span>Prijava</a></li>
-								
-							<?php } ?>
-						</ul>    	
-					</div> <!-- end of tooplate_menu -->
+            <div id="tooplate_wrapper">
+                <div id="tooplate_header_sp">
+                    <div id="tooplate_menu">
+                        <ul>
+                            <?php
+                                if (isset($_SESSION['user_id'])){
+                            ?>
+                            
+                            <li><a href="projects.php"><span></span>Projekti</a></li>
+                            
+                            <?php
+                                if(isset($_SESSION['admin']) == 1){
+                            ?>
+                            
+                            <li><a href="countries.php"><span></span>Države</a></li>
+                            <li><a href="skills.php"><span></span>Veščine</a></li>
+                            
+                            <?php } ?>
 
-					<!--<div id="site_title"><h1><a href="#">Free Website Template</a></h1></div>-->
+                            <li><a href="project_add.php"><span></span>Razpis projekta</a></li>
+                            <li><a href="profile.php" class="current"><span></span>Profil</a></li>
+                            <li><a href="logout.php"><span></span>Odjava</a></li>
 
-				</div> <!-- end of header -->
-
-				<!--<div id="tooplate_main">
-
-					<div id="tooplate_sidebar">
-						<div class="sidebar_box">
-							<h2>Navigation</h2>
-							<ul class="sidebar_nav">
-								<li><a href="#">Aliquam sed tellus</a></li>
-								<li><a href="#">Curabitur velit ante</a></li>
-								<li><a href="#">Donec ac nibh arcu</a></li>
-								<li><a href="#">Fusce placerat ultrices</a></li>
-								<li><a href="#">Maecenas fermentum </a></li>
-								<li><a href="#">Pellentesque egestas </a></li>
-							</ul>
-						</div>
-						<div class="sidebar_box">
-							<h2>Our Latest News</h2>
-							<div class="news_box">
-								<a href="#">Donec eu orci dolor</a>
-								<p>Integer eros augue, auctor vel scelerisque at, pellentesque sit amet odio. </p>
-							</div>
-							<div class="news_box">
-								<a href="#">Aliquam bibendum vulputate</a>
-								<p>Duis neque metus, ullamcorper sit amet dictum vel, tincidunt sit amet felis.</p>
-							</div>
-						</div>       
-
-					</div> <!-- end of sidebar -->
-				<?php
-				if (isset($_SESSION['error'])) {
-					echo '<div class="error">' . $_SESSION['error'] . '</div>';
-					unset($_SESSION['error']); //uničimo spremeljivko 
-				}
-				if (isset($_SESSION['success'])) {
-					echo '<div class="success">' . $_SESSION['success'] . '</div>';
-					unset($_SESSION['success']); //uničimo spremeljivko 
-				}
-				?>
+                            <?php } else { ?>
+                                <li><a href="user_add.php"><span></span>Registracija</a></li>
+                                <li><a href="login.php"><span></span>Prijava</a></li>
+                            <?php } ?>
+                        </ul>    	
+                    </div> <!-- end of tooplate_menu -->
+                            <!--<div id="site_title"><h1><a href="#">Free Website Template</a></h1></div>-->
+                </div> <!-- end of header -->
+            <?php
+                if (isset($_SESSION['error'])) {
+                    echo '<div class="error">' . $_SESSION['error'] . '</div>';
+                    unset($_SESSION['error']); //uničimo spremeljivko 
+                }
+                if (isset($_SESSION['success'])) {
+                    echo '<div class="success">' . $_SESSION['success'] . '</div>';
+                    unset($_SESSION['success']); //uničimo spremeljivko 
+                }
+            ?>
