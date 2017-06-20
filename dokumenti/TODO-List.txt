@@ -1,7 +1,6 @@
 ﻿Izmenjavanje sporocil
-	=> A-->B interno (dodajanje priponk)
+	=> A-->B interno
 	=> Sporocanje pregledno
-	=> Ob prijavi uporabnika se mu prikaže število cakajocih sporocil
 
 Sprejemanje projektov
 	=> Dogovarjanje o ponudbi ter prijavljanje na projekt (potrditi mora delojemalec in narocnik)

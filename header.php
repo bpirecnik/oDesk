@@ -1,5 +1,6 @@
 <?php
 include_once 'session.php';
+include_once 'database.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -64,9 +65,19 @@ include_once 'session.php';
                                 <li><a href="profile.php?tab=5"><span></span>Profil</a></li>
                             <?php }
                             if($tabs == 6){?> 
-                                <li><a href="messages.php?tab=6" class="current"><span></span><img src="images/mail_icon.png" alt="Smiley face" height="42" width="42"/></a></li>
+                                <li><a href="messages.php?tab=6" class="current"><span></span><img src="images/mail_icon.png" alt="Mail" height="32" width="32"/></a></li>
                                 <?php }else{?>
-                                <li><a href="messages.php?tab=6"><span></span><img src="images/mail_icon.png" alt="Smiley face" height="32" width="32"/>12</a></li>
+                                <li><a href="messages.php?tab=6"><span></span><img src="images/mail_icon.png" alt="Mail" height="32" width="32"/>
+                                    <?php
+                                        $user_id = $_SESSION['user_id'];
+                                        $sql = "SELECT COUNT(m.id) AS st_sporocil FROM messages m WHERE (seen = 0) AND (userto_id=$user_id)";
+                                        $result = mysqli_query($link, $sql);
+                                        while ($row = mysqli_fetch_array($result)) {
+                                                echo $row['st_sporocil'];
+                                        }
+                                    ?>
+                                    
+                                    </a></li>
                             <?php }
                             if($tabs == 7){?> 
                                 <li><a href="logout.php?tab=7" class="current"><span></span>Odjava</a></li>
