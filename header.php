@@ -28,7 +28,9 @@ include_once 'session.php';
                     <div id="tooplate_menu">
                         <ul>
                             <?php
+                            if(isset($_GET ['tab'])){ 
                                 $tabs = $_GET['tab'];
+                            }
                                 if (isset($_SESSION['user_id'])){
                             
                             if($tabs == 1){?>
@@ -67,7 +69,7 @@ include_once 'session.php';
                                 <li><a href="messages.php?tab=6"><span></span>Profil</a></li>
                             <?php }
                             if($tabs == 7){?> 
-                                <li><a href="logout.php?tab=7" class="current"><span></span>Odjava</a></li>
+                                <li><a href="logout.php?tab=7" class="current"><span></span><img src="smiley.gif" alt="Smiley face" height="42" width="42"/></a></li>
                                 <?php }else{?>
                                 <li><a href="logout.php?tab=7"><span></span>Odjava</a></li>
                             <?php }?>
