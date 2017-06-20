@@ -12,6 +12,7 @@
 ?>
 
 <link href="css/profile_style.css" rel="stylesheet" type="text/css" />
+<link href="css/profile_comment.css" rel="stylesheet" type="text/css" />
 
 <table id="tableProjects" style="display: none;">
     <?php require('scripts/getProjectsProfile.php'); ?>
@@ -173,15 +174,30 @@
 								</td>
 								<td>
 									<div>
-										<table>
-											<tr>
-												<td>OCENA IN KOMENTAR:</td>
-												<td></td>
-											</tr>
-											<tr>
-												<td colspan="2"></td>
-											</tr>
-										</table>
+										<form action="comment_rating.php" method="POST">
+											<table>
+												<tr>
+													<td>OCENA IN KOMENTAR:</td>
+													<td>
+														OCENA:
+														<select class="input_login" name="rating">
+															<?php
+																$query = "SELECT * FROM ratings";
+																$result = mysqli_query($link, $query);
+																while ($row = mysqli_fetch_array($result)) {
+																	echo '<option value="' . $row['id'] . '">' . $row['rating'] . '</option>';
+																}
+															?>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="2">
+														<input type="text" id="comment_text_input" placeholder="Komentar" name="comment" required="required"/>
+													</td>
+												</tr>
+											</table>
+										</form>
 									</div>
 								</td>
 							</tr>
