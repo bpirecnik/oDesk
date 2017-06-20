@@ -37,7 +37,7 @@ if(isset($_SESSION['user_id'])){
                     echo "</tr>";
                     echo '<tr>';
                     if(isset($_GET['id'])){
-                        echo '<td colspan=2><span id="button"><a href="project_info.php?id='.$row['id'].'&cre='.$row['uID'].'&tab=1">Ogled projekta</a></span>';
+                        echo '<td colspan=2><span id="button"><a href="projects_myinfo.php?id='.$row['id'].'&cre='.$row['uID'].'&tab=1">Ogled projekta</a></span>';
                     }else{
                         echo '<td colspan=2><span id="button"><a href="project_info.php?id='.$row['id'].'&cre='.$row['uID'].'&tab=1">Ogled projekta</a></span>';
                     }
