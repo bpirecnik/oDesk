@@ -31,7 +31,7 @@
         }
         
         //vse je ok, preusmeritev na index
-        header("Location: projects.php");
+        header("Location: projects.php?tab=1");
         die();
     }
     else {

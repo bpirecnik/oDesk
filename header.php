@@ -28,27 +28,53 @@ include_once 'session.php';
                     <div id="tooplate_menu">
                         <ul>
                             <?php
+                                $tabs = $_GET['tab'];
                                 if (isset($_SESSION['user_id'])){
-                            ?>
                             
-                            <li><a href="projects.php"><span></span>Projekti</a></li>
-                            
+                            if($tabs == 1){?>
+                                <li><a href="projects.php?tab=1" class="current"><span></span>Projekti</a></li>
+                            <?php }else{ ?>
+                                <li><a href="projects.php?tab=1"><span></span>Projekti</a></li>
                             <?php
+                            }
                                 if(isset($_SESSION['admin']) == 1){
-                            ?>
-                            
-                            <li><a href="countries.php"><span></span>Države</a></li>
-                            <li><a href="skills.php"><span></span>Veščine</a></li>
-                            
-                            <?php } ?>
-
-                            <li><a href="project_add.php"><span></span>Dodaj projekt</a></li>
-                            <li><a href="profile.php" class="current"><span></span>Profil</a></li>
-                            <li><a href="logout.php"><span></span>Odjava</a></li>
+                                
+                            if($tabs == 2){?> 
+                                <li><a href="countries.php?tab=2" class="current"><span></span>Države</a></li>
+                                <?php }else{?>
+                                <li><a href="countries.php?tab=2"><span></span>Države</a></li>
+                                <?php }
+                            if($tabs == 3){?> 
+                                <li><a href="skills.php?tab=3" class="current"><span></span>Veščine</a></li>
+                                <?php }else{?>
+                                <li><a href="skills.php?tab=3"><span></span>Veščine</a></li>
+                                <?php }?>
+                            <?php }?>
+                             
+                            <?php if($tabs == 4){?> 
+                                <li><a href="project_add.php?tab=4" class="current"><span></span>Dodaj projekt</a></li>
+                                <?php }else{?>
+                                <li><a href="project_add.php?tab=4"><span></span>Dodaj projekt</a></li>
+                            <?php }
+                            if($tabs == 5){?> 
+                                <li><a href="profile.php?tab=5" class="current"><span></span>Profil</a></li>
+                                <?php }else{?>
+                                <li><a href="profile.php?tab=5"><span></span>Profil</a></li>
+                            <?php }
+                            if($tabs == 6){?> 
+                                <li><a href="messages.php?tab=6" class="current"><span></span>Profil</a></li>
+                                <?php }else{?>
+                                <li><a href="messages.php?tab=6"><span></span>Profil</a></li>
+                            <?php }
+                            if($tabs == 7){?> 
+                                <li><a href="logout.php?tab=7" class="current"><span></span>Odjava</a></li>
+                                <?php }else{?>
+                                <li><a href="logout.php?tab=7"><span></span>Odjava</a></li>
+                            <?php }?>
 
                             <?php } else { ?>
                                 <li><a href="user_add.php"><span></span>Registracija</a></li>
-                                <li><a href="login.php"><span></span>Prijava</a></li>
+                                <li><a href="login.php?tab=1"><span></span>Prijava</a></li>
                             <?php } ?>
                         </ul>    	
                     </div> <!-- end of tooplate_menu -->
