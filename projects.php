@@ -28,7 +28,7 @@ if(isset($_SESSION['user_id'])){
                         echo "<td><span id='time_added'>Dodano ".$row['start_date']."</span></td>";
                     echo "</tr>";
                     echo "<tr>";
-                        echo '<td><span id="creator"><a href="profiles.php?id='.$row['uID'].'">'.$row['first_name'].' '.$row['last_name'].'</a></span>';
+                        echo '<td><span id="creator"><a href="profiles.php?id='.$row['uID'].'&tab=1">'.$row['first_name'].' '.$row['last_name'].'</a></span>';
                         echo'<br><span id="price">'.$row['price'].' €</span><br><span id="category">'.$row['category'].'</span></td>';
                         echo '<td><span id="end">'.$row['end_date'].'</span></td>';
                     echo "</tr>";
