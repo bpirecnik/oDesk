@@ -47,7 +47,7 @@ function firstShow() {
 //Functions for next task and previous task --> changing one at a time
 function nextTask(sender) {
 	if(sender == "arrowRightUser"){
-		numOfRows = document.getElementById("project_table").rows.length/2;
+		numOfRows = document.getElementById("tableProjects").rows.length;
 		if(count < numOfRows){
 			count++;
 			search = 'row' + count;

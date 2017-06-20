@@ -42,7 +42,7 @@ include_once 'session.php';
                             
                             <?php } ?>
 
-                            <li><a href="project_add.php"><span></span>Razpis projekta</a></li>
+                            <li><a href="project_add.php"><span></span>Dodaj projekt</a></li>
                             <li><a href="profile.php" class="current"><span></span>Profil</a></li>
                             <li><a href="logout.php"><span></span>Odjava</a></li>
 
