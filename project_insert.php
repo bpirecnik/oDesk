@@ -25,5 +25,5 @@
     $sql = "INSERT INTO projects_users(role_id, user_id, project_id, skill_id) VALUES (1, $user_id, (SELECT id FROM projects WHERE (title LIKE '$title') AND (price = $price) AND (description LIKE '$description') AND (stage = 1)), 7)";
     mysqli_query($link, $sql);
     //preusmeritev
-    header("Location: projects.php")
+    header("Location: projects.php&tab=1")
 ?>

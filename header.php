@@ -64,12 +64,12 @@ include_once 'session.php';
                                 <li><a href="profile.php?tab=5"><span></span>Profil</a></li>
                             <?php }
                             if($tabs == 6){?> 
-                                <li><a href="messages.php?tab=6" class="current"><span></span>Profil</a></li>
+                                <li><a href="messages.php?tab=6" class="current"><span></span><img src="images/mail_icon.png" alt="Smiley face" height="42" width="42"/></a></li>
                                 <?php }else{?>
-                                <li><a href="messages.php?tab=6"><span></span>Profil</a></li>
+                                <li><a href="messages.php?tab=6"><span></span><img src="images/mail_icon.png" alt="Smiley face" height="32" width="32"/>12</a></li>
                             <?php }
                             if($tabs == 7){?> 
-                                <li><a href="logout.php?tab=7" class="current"><span></span><img src="smiley.gif" alt="Smiley face" height="42" width="42"/></a></li>
+                                <li><a href="logout.php?tab=7" class="current"><span></span>Odjava</a></li>
                                 <?php }else{?>
                                 <li><a href="logout.php?tab=7"><span></span>Odjava</a></li>
                             <?php }?>

@@ -14,6 +14,6 @@
             $sql = "INSERT INTO messages (userfrom_id, userto_id, seen, content, title, date) VALUES ($user_id, $creator, '0', 'Hi i just signed up to your project named: ', 'Signed up to project', CURRENT_TIMESTAMP);";
             mysqli_query($link, $sql);
         }
-        header("Location: project_info.php?id=$projectid&cre=$creator");
+        header("Location: project_info.php?id=$projectid&cre=$creator&tab=1");
     }
 ?>
