@@ -117,7 +117,7 @@
 										giver.id = ru.usergiver_id INNER JOIN users receiver ON receiver.id = ru.usergetr_id WHERE (ru.usergetr_id = $user_id)";
 										$result = mysqli_query($link, $sql);
 										while ($row = mysqli_fetch_array($result)){
-											echo $row['povprecna_ocena'];
+											echo (float) $row['povprecna_ocena'];
 										}
 									?>
 								</span><br>
@@ -125,49 +125,67 @@
             </div>
         </td>
     </tr>
-
     <tr>
         <td>
-            <div id="vescine">
-                <h2>Veščine</h2>
-                <?php
-                        $query = "SELECT s.title FROM skills s INNER JOIN skills_users su ON s.id = su.skill_id WHERE su.user_id=$user_id AND s.id = su.skill_id";
-                        $result = mysqli_query($link, $query);
-                        while($row = mysqli_fetch_array($result)) {
-                            echo '<span>'.$row['title'].'</span>';
-                        }
-                ?>
-            </div>
-            <div class="center">
-                <form action="skills_profile_update.php" method="POST">
-                    <?php
-                        //zapomnim si trenute veščine, ki jih ima
-                        $query = "SELECT * FROM skills_users WHERE user_id=$user_id";
-                        $result = mysqli_query($link, $query);
-                        //naredim prazno tabelo
-                        $skills = array();
-                        while($row = mysqli_fetch_array($result)) {
-                            //napolnim tabelo z veščinami, ki jih obvladam :)
-                            $skills[] = $row['skill_id'];
-                        }
-                        $query = "SELECT * FROM skills";
-                        $result = mysqli_query($link, $query);
-                        while ($row = mysqli_fetch_array($result)) {
-                            if (in_array($row['id'], $skills)) {
-                                echo '<input type="checkbox"
-                                    name=skills[] value="'.$row['id'].'" checked="checked" />'.$row['title'];
-                            }
-                            else {
-                                echo '<input type="checkbox"
-                                    name=skills[] value="'.$row['id'].'" />'.$row['title'];
-                            }
-                            echo '<br />';
-                        }
+					<table id="bottom_profile">
+						<tr>
+							<td>
+			            <div id="vescine">
+			                <h2>Veščine</h2>
+			                <?php
+			                        $query = "SELECT s.title FROM skills s INNER JOIN skills_users su ON s.id = su.skill_id WHERE su.user_id=$user_id AND s.id = su.skill_id";
+			                        $result = mysqli_query($link, $query);
+			                        while($row = mysqli_fetch_array($result)) {
+			                            echo '<span>'.$row['title'].'</span>';
+			                        }
+			                ?>
+			            </div>
+			            <div class="center">
+			                <form action="skills_profile_update.php" method="POST">
+			                    <?php
+			                        //zapomnim si trenute veščine, ki jih ima
+			                        $query = "SELECT * FROM skills_users WHERE user_id=$user_id";
+			                        $result = mysqli_query($link, $query);
+			                        //naredim prazno tabelo
+			                        $skills = array();
+			                        while($row = mysqli_fetch_array($result)) {
+			                            //napolnim tabelo z veščinami, ki jih obvladam :)
+			                            $skills[] = $row['skill_id'];
+			                        }
+			                        $query = "SELECT * FROM skills";
+			                        $result = mysqli_query($link, $query);
+			                        while ($row = mysqli_fetch_array($result)) {
+			                            if (in_array($row['id'], $skills)) {
+			                                echo '<input type="checkbox"
+			                                    name=skills[] value="'.$row['id'].'" checked="checked" />'.$row['title'];
+			                            }
+			                            else {
+			                                echo '<input type="checkbox"
+			                                    name=skills[] value="'.$row['id'].'" />'.$row['title'];
+			                            }
+			                            echo '<br />';
+			                        }
 
-                    ?>
-                    <input type="submit" value="Posodobi" />
-                </form>
-            </div>
+			                    ?>
+			                    <input type="submit" value="Posodobi" />
+			                </form>
+			            </div>
+								</td>
+								<td>
+									<div>
+										<table>
+											<tr>
+												<td>OCENA IN KOMENTAR:</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td colspan="2"></td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</table>
         </td>
     </tr>
 </table>

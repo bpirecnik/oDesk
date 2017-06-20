@@ -2,22 +2,24 @@ html, body, div, form, fieldset, legend, label{
     margin: 0;
     padding: 0;
 }
-table{
-    border-collapse: collapse;
-    border-spacing: 0;
+#bottom_profile{
+	margin: 10px;
+	border-color: red;
 }
 th, td{
     text-align: left;
     vertical-align: top;
 }
 img {
-    border: 0; 
+    border: 0;
 }
 
-table {
+.boris_table {
     height: 100%;
     width: 100%;
     border: black solid 1px;
+		border-collapse: collapse;
+		border-spacing: 0;
 }
 
 #profile{
@@ -89,4 +91,3 @@ table {
     cursor: pointer;
     outline-color: white;
 }
-
