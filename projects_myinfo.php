@@ -12,14 +12,14 @@ include_once 'database.php';
     $id = $_GET['id'];
     $creator = $_GET['cre'];
     
-    $test = "SELECT COUNT(id) AS number FROM projects_users WHERE (user_id = $user_id) AND project_id = $id AND role_id=2;";
+    $test = "SELECT COUNT(id) AS number FROM projects_users WHERE (user_id = $user_id) AND project_id = $id";
     $result = mysqli_query($link, $test);
 
     while ($row = mysqli_fetch_array($result)) {
         $count = $row['number'];
     }
     
-    $query = "SELECT p.*, u.first_name, u.last_name, u.id AS uID, c.title AS category FROM projects p INNER JOIN categories c ON c.id=p.category_id INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u ON u.id = pu.user_id WHERE pu.project_id=$id AND p.stage=1 AND u.id!=$user_id ORDER BY p.start_date DESC";
+    $query = "SELECT p.*, u.first_name, u.last_name, u.id AS uID, c.title AS category FROM projects p INNER JOIN categories c ON c.id=p.category_id INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u ON u.id = pu.user_id WHERE pu.project_id=$id AND p.stage!=3 AND u.id!=$user_id ORDER BY p.start_date DESC";
     $result = mysqli_query($link, $query);
 		
     while ($row = mysqli_fetch_array($result)) {
@@ -37,20 +37,28 @@ include_once 'database.php';
                 echo "<tr>";
                     echo '<td colspan=2><span id="desc">'.$row['description'].'</span></td>';
                 echo "</tr>";
+                echo "<tr>";
+                    echo '<td colspan=2><a href="project_finish.php?project='.$id.'">Zaključi projekt</a></td>';
+                echo "</tr>";
             echo '</table>';
         echo "</div><br>";
     }
     
     $test = "SELECT u.id, u.first_name, u.last_name FROM users u INNER JOIN projects_users pu ON u.id = pu.user_id WHERE (pu.project_id) = $id AND (pu.role_id = 2)";
     $result = mysqli_query($link, $test);
-
+    echo "<span>Čakajoči uporabniki:</span><br>";
     while ($row = mysqli_fetch_array($result)) {
         echo $row['first_name']." ".$row['last_name']."";
         echo "<a href='adduser.php?id=".$row['id']."&project=".$id."'>Dodaj uporabnika</a>";
     }
+    echo "<br><br>";
+    $test = "SELECT u.id, u.first_name, u.last_name FROM users u INNER JOIN projects_users pu ON u.id = pu.user_id WHERE (pu.project_id) = $id AND (pu.role_id = 3)";
+    $result = mysqli_query($link, $test);
+    echo "<span>Dodani uporabniki:</span><br>";
+    while ($row = mysqli_fetch_array($result)) {
+        echo $row['first_name']." ".$row['last_name']."<br>";
+    }
 ?>
-
-
 
 <?php
 include_once 'footer.php';

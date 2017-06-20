@@ -123,6 +123,7 @@
 									?>
 								</span><br>
                 <span id="num_coments">Število komentarjev: 16</span>
+                <?php echo "<br><a href='messages_new.php?sender=".$user_id."&tab=6'>Pošlji sporočilo</a>"; ?>
             </div>
         </td>
     </tr>

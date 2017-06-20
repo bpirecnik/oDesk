@@ -19,7 +19,7 @@ include_once 'database.php';
         $count = $row['number'];
     }
     
-    $query = "SELECT p.*, u.first_name, u.last_name, u.id AS uID, c.title AS category FROM projects p INNER JOIN categories c ON c.id=p.category_id INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u ON u.id = pu.user_id WHERE pu.project_id=$id AND p.stage=1 AND u.id!=$user_id ORDER BY p.start_date DESC";
+    $query = "SELECT p.*, u.first_name, u.last_name, u.id AS uID, c.title AS category FROM projects p INNER JOIN categories c ON c.id=p.category_id INNER JOIN projects_users pu ON p.id = pu.project_id INNER JOIN users u ON u.id = pu.user_id WHERE pu.project_id=$id AND p.stage=1 AND u.id!=$user_id ORDER BY p.start_date DESC LIMIT 1";
     $result = mysqli_query($link, $query);
 		
     while ($row = mysqli_fetch_array($result)) {
